@@ -41,7 +41,7 @@ let result2 = multiply(5, 9);
 console.log(result2);
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -69,7 +69,7 @@ let result3 = sumAndMultiply(4, 7, 5);
 console.log(result3);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -143,13 +143,22 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
+let i;
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  let multipleAnyArray = 1;
+  for (i = 0; i < testDynamicArray.length; i++) {
+    multipleAnyArray = multiply(testDynamicArray[i], multipleAnyArray)[0];
+  }
+  let message7 = `The numbers ${testDynamicArray} have a product of 120.`;
+  return [multipleAnyArray, message7];
 }
 
+let result6 = multiplyAnyArray(testDynamicArray);
+console.log(result6);
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
